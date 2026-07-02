@@ -24,6 +24,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.unit.sp
 
 
 class MainActivity : ComponentActivity() {
@@ -58,23 +59,27 @@ fun CounterScreen(modifier: Modifier = Modifier) {
         modifier = modifier,
         horizontalAlignment = Alignment.CenterHorizontally
         ) {
-        Text(text = "COUNTER APP")
+        Text(
+            text = "COUNTER APP",
+            fontSize = 30.sp
+        )
         Spacer(Modifier.height(30.dp))
 
         Text(
-            text = "Count: $count"
+            text = "Count: $count",
+            fontSize = 24.sp
         )
 
         Spacer(Modifier.height(15.dp))
 
         Row(modifier = modifier) {
 
-            Button(onClick = { count++ }) {
-                Text(text = "+")
-            }
-
             Button(onClick = { count-- }) {
                 Text(text = "-")
+            }
+
+            Button(onClick = { count++ }) {
+                Text(text = "+")
             }
 
         }
